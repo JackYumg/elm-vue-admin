@@ -1,0 +1,23 @@
+{
+  "name": "elm-vue-admin",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "@vitejs/plugin-vue-jsx": "^1.1.6",
+    "element-plus": "^1.0.2-beta.55",
+    "scss": "^0.2.4",
+    "vue": "^3.0.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.2.5",
+    "@vue/compiler-sfc": "^3.0.5",
+    "typescript": "^4.3.2",
+    "vite": "^2.4.3",
+    "vite-plugin-style-import": "^1.0.1",
+    "vue-tsc": "^0.0.24"
+  }
+}
