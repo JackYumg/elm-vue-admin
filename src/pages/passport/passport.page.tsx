@@ -1,18 +1,34 @@
 import { defineComponent } from "vue";
-import { ElAside, ElContainer, ElFooter, ElHeader, ElMain } from 'element-plus';
+import { ElAside, ElContainer, ElFooter, ElHeader, ElMain, ElTabPane, ElTabs } from 'element-plus';
 import passportClasses from './passport.module.scss';
 import i18Header from "../../components/passport/i18.header";
 import { RouterView } from "vue-router";
+import GloableFooter from './../../components/global/global.footer';
 export default defineComponent({
     components: {
-        i18Header
+        i18Header,
+        GloableFooter
     },
     render() {
+        const loginLabel = () => {
+            return <div>登陆</div>
+        }
         return <div class={passportClasses.container}>
             <i18Header></i18Header>
-            <RouterView></RouterView>
             <div class={passportClasses.wrap}>
-
+                <div class={passportClasses.top}>
+                    <div class={passportClasses.head}>
+                        <img src="" alt="" />
+                        <span class={passportClasses.title}>Vue-Elm-Admin</span>
+                    </div>
+                    <div class={passportClasses.desc}>
+                        学习中
+                    </div>
+                </div>
+                <RouterView></RouterView>
+                <div class={passportClasses.footer}>
+                    <GloableFooter></GloableFooter>
+                </div>
             </div>
         </div>
     }
