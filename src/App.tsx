@@ -1,11 +1,7 @@
 import { defineComponent } from "vue";
-import HelloWorld from './components/HelloWorld.vue';
-import { ElButton} from 'element-plus'; 
+import { RouterView } from 'vue-router';
 export default defineComponent({
   render() {
-    return <div id="app">
-      <ElButton>按钮</ElButton>
-      <HelloWorld msg="10086"></HelloWorld>
-    </div>
+    return <RouterView></RouterView>
   }
 })

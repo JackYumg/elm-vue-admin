@@ -1,0 +1,32 @@
+@import './../../core/element-variables.scss';
+
+$--layout-header: 60px;
+$--layout-asider: 200px;
+
+.container {
+    height: 100%;
+
+    .header {
+        background-color: $--color-primary;
+        box-shadow: 0 1px 10px rgb(0 0 0 / 20%);
+    }
+
+    .aside {
+        width: $--layout-asider !important;
+        height: 100%;
+        position: relative;
+
+        &::after {
+            position: absolute;
+            border-right: 1px solid gainsboro;
+            content: "";
+            right: 0;
+            height: 100%;
+            top: 0;
+        }
+    }
+
+    .content {
+        background: #f5f7fa;
+    }
+}
