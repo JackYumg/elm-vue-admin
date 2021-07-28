@@ -1,11 +1,10 @@
 import { ElIcon, ElMenu, ElMenuItem, ElMenuItemGroup, ElSubmenu } from "element-plus";
 import { defineComponent } from "vue";
-import { ElMenuGroupIn } from "../../@types/menu";
+import { ElMenuGroupIn, ElMenuIn } from "../../@types/menu";
 import { menus } from "./Menu.data";
 import mainStyles from './main.module.scss';
 export default defineComponent({
     render() {
-        console.log(mainStyles);
         return <ElMenu class={mainStyles.menu}>
             {
                 this.buildMenus(menus)
@@ -14,16 +13,25 @@ export default defineComponent({
     },
     methods: {
         buildMenus(menus: ElMenuGroupIn[] = []) {
-            return menus.map((gropu) => {
-                return <ElMenuItemGroup title={gropu.title}>
+            const getTitle = (menu: ElMenuIn) => {
+                <span>
+                    {menu.icon ? <ElIcon name={menu.icon} /> : ''}
+                    {menu.title}
+                </span>
+            }
+            return menus.map((group) => {
+                return <ElMenuItemGroup title={group.title} key={group.title}>
                     {
-                        gropu.menus.map((menu) => {
-                            return <ElSubmenu>
-                                {menu.icon ? <ElIcon name={menu.icon} /> : ''}
-                                <span>{menu.title}</span>
+                        group.menus.map((menu, index) => {
+                            return <ElSubmenu index={index.toString()} v-slots={{
+                                title: <span>
+                                    <ElIcon name={menu.icon} />
+                                    {menu.title}
+                                </span>,
+                            }}>
                                 {
-                                    menu.children.map(subMenu => {
-                                        return <ElMenuItem>
+                                    menu.children.map((subMenu, itemIndex) => {
+                                        return <ElMenuItem key={itemIndex} index={itemIndex.toString()}>
                                             {subMenu.title}
                                         </ElMenuItem>
                                     })
