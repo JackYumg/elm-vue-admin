@@ -12,8 +12,9 @@ import enLocale from 'element-plus/lib/locale/lang/en'
 import zhLocale from 'element-plus/lib/locale/lang/zh-cn'
 import { i18Messages } from './core/i18n/i8n.message'
 import { createStore } from 'vuex'
-import { rootStore } from './store'
+import { appkey, rootStore } from './store'
 locale(lang);
+declare const module: { hot: any };
 // 国际化配置
 // 路由配置
 const app = createApp(App);
@@ -63,8 +64,7 @@ function applyPlugins() {
 }
 applyPlugins();
 
-const store = createStore(rootStore)
-app.use(store);
+app.use(rootStore , appkey);
 app.use(i18n);
 app.use(router);
 app.mount('#app');

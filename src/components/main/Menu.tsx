@@ -3,9 +3,13 @@ import { defineComponent } from "vue";
 import { ElMenuGroupIn, ElMenuIn } from "../../@types/menu";
 import { menus } from "./Menu.data";
 import mainStyles from './main.module.scss';
+import { useStore } from "vuex";
+import { appkey } from "../../store";
+import { MainState } from "../../store/modules/main/main.vuex";
 export default defineComponent({
     render() {
-        return <ElMenu class={mainStyles.menu}>
+        const store = useStore(appkey);
+        return <ElMenu collapse={store.state.main.menuToggle} class={[mainStyles.menu]}>
             {
                 this.buildMenus(menus)
             }
@@ -13,22 +17,20 @@ export default defineComponent({
     },
     methods: {
         buildMenus(menus: ElMenuGroupIn[] = []) {
-            const getTitle = (menu: ElMenuIn) => {
-                <span>
-                    {menu.icon ? <ElIcon name={menu.icon} /> : ''}
-                    {menu.title}
-                </span>
-            }
+            const store = useStore(appkey);
+            const mainState = store.state.main;
             return menus.map((group) => {
-                return <ElMenuItemGroup title={group.title} key={group.title}>
+                return <ElMenuItemGroup title={!mainState.menuToggle ? group.title: ''} key={group.title}>
                     {
                         group.menus.map((menu, index) => {
-                            return <ElSubmenu index={index.toString()} v-slots={{
-                                title: <span>
-                                    <ElIcon name={menu.icon} />
-                                    {menu.title}
-                                </span>,
-                            }}>
+                            return <ElSubmenu
+                                index={index.toString()}
+                                v-slots={{
+                                    title: () => <span>
+                                        <ElIcon name={menu.icon} />
+                                        {!mainState.menuToggle ? menu.title : ''}
+                                    </span>,
+                                }}>
                                 {
                                     menu.children.map((subMenu, itemIndex) => {
                                         return <ElMenuItem key={itemIndex} index={itemIndex.toString()}>

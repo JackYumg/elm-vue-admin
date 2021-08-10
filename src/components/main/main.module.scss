@@ -1,3 +1,5 @@
+@import "./../../core/element-variables.scss";
+
 // 用户信息
 .row {
     margin: 24px 24px 0;
@@ -16,8 +18,88 @@
     }
 }
 
+.info-row{
+    width: 64px;
+}
+
+.collapse-info-row{
+    width: 200px;
+}
+
+.collapse-row {
+    text-align: center;
+    margin-top: 24px;
+}
+
 // 菜单
-.menu{
-    padding-top: 24px!important;
-    padding-bottom: 24px!important;
+.menu {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+    border-right: 0 !important;
+}
+
+// 头部
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    justify-content: space-between;
+    .logo {
+        transition: 200ms all ease-in-out;
+    }
+
+    .collapsed-logo {
+        width: 64px;
+    }
+
+    .uncollapsed {
+        width: 200px;
+    }
+
+    .toolbar {
+        .btn-right {
+            border-left-width: 0px;
+        }
+
+        .btn-center {
+            border-left-width: 0px;
+            border-right-width: 0px;
+        }
+        .btn-left {
+            border-right-width: 0px;
+        }
+    }
+
+    .tool-btn{
+        // font-size: 16px;
+    }
+    .toolbar-msg {
+        // flex: 2;
+        .btn-right {
+            border-left-width: 0px;
+        }
+
+        .btn-center {
+            border-left-width: 0px;
+            border-right-width: 0px;
+        }
+        .btn-left {
+            border-right-width: 0px;
+        }
+    }
+
+    .query{
+        flex: 1;
+    }
+}
+
+.default {
+    z-index: 19;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 64px;
+    padding: 0 16px;
+    background-color: $--color-primary;
+    box-shadow: 0 1px 10px #0003;
 }

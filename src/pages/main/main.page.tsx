@@ -4,24 +4,28 @@ import passportClasses from './main.module.scss';
 import Menu from "../../components/main/Menu";
 import Header from "../../components/main/Header";
 import UserInfo from "../../components/main/UserInfo";
+import { useStore } from "vuex";
+import { appkey } from "../../store";
+import { RouterView } from "vue-router";
 export default defineComponent({
     components: {
         Menu
     },
     render() {
+        const store = useStore(appkey);
+        const mainState = store.state.main;
         return <ElContainer class={passportClasses.container}>
             <ElHeader class={passportClasses.header}>
                 <Header></Header>
             </ElHeader>
             <ElContainer>
-                <ElAside class={passportClasses.aside}>
+                <div class={[passportClasses.aside, !mainState.menuToggle ? passportClasses.uncollapsed : passportClasses.collapsed]}>
                     <UserInfo></UserInfo>
                     <Menu></Menu>
-                </ElAside>
-                <ElContainer class={passportClasses.content}>
-                    <ElMain></ElMain>
-                    <ElFooter></ElFooter>
-                </ElContainer>
+                </div>
+                <ElMain>
+                    <RouterView></RouterView>
+                </ElMain>
             </ElContainer>
         </ElContainer>
     }

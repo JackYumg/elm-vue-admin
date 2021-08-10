@@ -5,6 +5,7 @@ import styleImport from 'vite-plugin-style-import'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  mode: 'dev',
   plugins: [
     vue(),
     vuejsx(),
@@ -22,8 +23,13 @@ export default defineConfig({
           },
         }
       ]
-    })
+    }),
   ],
+  css: {
+    modules: {
+      localsConvention: 'camelCaseOnly'
+    }
+  },
   esbuild: {
     jsxFactory: 'h',
     jsxFragment: 'Fragment'

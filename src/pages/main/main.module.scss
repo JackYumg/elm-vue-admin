@@ -1,8 +1,8 @@
-@import './../../core/element-variables.scss';
+@import "./../../core/element-variables.scss";
 
 $--layout-header: 60px;
 $--layout-asider: 200px;
-
+$--layout-asider-collapsed: 64px;
 .container {
     height: 100%;
 
@@ -12,18 +12,26 @@ $--layout-asider: 200px;
     }
 
     .aside {
-        width: $--layout-asider !important;
         height: 100%;
         position: relative;
-
+        transition: 200ms all ease-in-out;
+        width: $--layout-asider !important;
+        box-shadow: 0px 0px 0px 1px gainsboro;
         &::after {
-            position: absolute;
-            border-right: 1px solid gainsboro;
-            content: "";
-            right: 0;
-            height: 100%;
-            top: 0;
+            // position: absolute;
+            // border-right: 1px solid gainsboro;
+            // content: "";
+            // right: 0;
+            // height: 100%;
+            // top: 0;
         }
+    }
+    .collapsed {
+        width: $--layout-asider-collapsed !important;
+    }
+
+    .uncollapsed {
+        width: $--layout-asider !important;
     }
 
     .content {
