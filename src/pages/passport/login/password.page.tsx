@@ -31,7 +31,7 @@ export default defineComponent({
                 </ElRow>
             </ElFormItem>
             <ElFormItem>
-                <ElButton onclick={login} class={loginStyles['main-button']} type={'primary'}>登录</ElButton>
+                <ElButton onclick={login} class={loginStyles['mainButton']} type={'primary'}>登录</ElButton>
             </ElFormItem>
             <ElFormItem class={loginStyles.register}>
                 <ElLink type={'primary'}>立即注册</ElLink>

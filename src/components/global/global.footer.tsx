@@ -3,7 +3,6 @@ import { defineComponent } from "vue";
 import gloablStyles from './global.module.scss';
 export default defineComponent({
     render() {
-        console.log(gloablStyles);
         return <div class={gloablStyles['global-footer']}>
             <div class={gloablStyles.link}>
                 <a class={gloablStyles.linkItem}>帮助</a>

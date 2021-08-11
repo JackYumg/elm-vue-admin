@@ -16,10 +16,10 @@ export default defineComponent({
             </div>
             <BoxComponents />
             <ElRow gutter={20}>
-                <ElCol span={12}>
+                <ElCol span={12} sm={20} md={30} xl={10}>
                     <MonthCountComponent/>
                 </ElCol>
-                <ElCol span={12}>
+                <ElCol span={12} sm={20} md={30} xl={10}>
                     <CountComponent/>
                 </ElCol>
             </ElRow>
