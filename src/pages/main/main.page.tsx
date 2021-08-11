@@ -23,7 +23,7 @@ export default defineComponent({
                     <UserInfo></UserInfo>
                     <Menu></Menu>
                 </div>
-                <ElMain>
+                <ElMain class={passportClasses.main}>
                     <RouterView></RouterView>
                 </ElMain>
             </ElContainer>

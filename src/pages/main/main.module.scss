@@ -26,6 +26,11 @@ $--layout-asider-collapsed: 64px;
             // top: 0;
         }
     }
+
+    .main{
+        overflow-x: hidden;
+        background: $--color-default-back;
+    }
     .collapsed {
         width: $--layout-asider-collapsed !important;
     }

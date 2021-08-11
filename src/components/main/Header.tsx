@@ -3,7 +3,7 @@ import { defineComponent, reactive } from "vue";
 import { useStore } from "vuex";
 import { appkey } from "../../store";
 import mainStyles from './main.module.scss';
-
+import elmFull from './../../assets/header/elm-full.svg';
 export default defineComponent({
     render() {
         const store = useStore(appkey);
@@ -26,7 +26,7 @@ export default defineComponent({
 
         const mainState = store.state.main;
         return <div class={[mainStyles.header, mainStyles.default]}>
-            <div class={[mainStyles.logo, !mainState.menuToggle ? mainStyles.uncollapsed : mainStyles.collapsedLogo]}>{!mainState.menuToggle ? 'Vue-Admin' : 'V'}</div>
+            <div class={[mainStyles.logo, !mainState.menuToggle ? mainStyles.uncollapsed : mainStyles.collapsedLogo]}>{!mainState.menuToggle ? <img src={elmFull}/> : <span class={mainStyles.logo}><img src={elmFull}/></span>}</div>
             <div class={mainStyles.toolbar}>
                 <ElButtonGroup>
                     <ElButton onclick={toggle} class={[mainStyles.btnLeft, mainStyles.toolBtn]} size={'small'} type={'primary'} icon={mainState.menuToggle ? 'el-icon-s-fold' : 'el-icon-s-unfold'}>
@@ -57,6 +57,7 @@ export default defineComponent({
                     </ElButton>
                     <ElButton class={[mainStyles.btnRight, mainStyles.toolBtn]} size={'small'} type={'primary'}>
                         <ElAvatar style={{ width: '16px', height: '16px' }} size={'small'} src={'https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png'}></ElAvatar>
+                        <span>Admin</span>
                     </ElButton>
                 </ElButtonGroup>
             </div>

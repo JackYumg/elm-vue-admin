@@ -8,6 +8,7 @@
 
     .info {
         color: inherit;
+
         &-name {
             margin: 0;
         }
@@ -18,11 +19,11 @@
     }
 }
 
-.info-row{
+.info-row {
     width: 64px;
 }
 
-.collapse-info-row{
+.collapse-info-row {
     width: 200px;
 }
 
@@ -44,12 +45,20 @@
     left: 0;
     top: 0;
     justify-content: space-between;
+
     .logo {
         transition: 200ms all ease-in-out;
     }
 
     .collapsed-logo {
         width: 64px;
+        height: 42px;
+
+        .logo {
+            width: 38px;
+            display: inline-block;
+            overflow: hidden;
+        }
     }
 
     .uncollapsed {
@@ -65,16 +74,19 @@
             border-left-width: 0px;
             border-right-width: 0px;
         }
+
         .btn-left {
             border-right-width: 0px;
         }
     }
 
-    .tool-btn{
+    .tool-btn {
         // font-size: 16px;
     }
+
     .toolbar-msg {
-        // flex: 2;
+        width: 280px;
+
         .btn-right {
             border-left-width: 0px;
         }
@@ -83,12 +95,13 @@
             border-left-width: 0px;
             border-right-width: 0px;
         }
+
         .btn-left {
             border-right-width: 0px;
         }
     }
 
-    .query{
+    .query {
         flex: 1;
     }
 }

@@ -1,6 +1,7 @@
 import { ElRow, ElCol, ElIcon } from "element-plus";
 import { defineComponent } from "vue";
 import dashboardStyles from './../dashboard.module.scss';
+import TotalCharts from "./Total.charts";
 export default defineComponent({
     render() {
         return <ElRow class={dashboardStyles.item} gutter={20}>
@@ -11,7 +12,7 @@ export default defineComponent({
                         <div class={dashboardStyles.desc}>活动总场次</div>
                     </div>
                     <div class={dashboardStyles.icon}>
-                        {/* <ElIcon name={'el-icon-medal'}></ElIcon> */}
+                        <TotalCharts></TotalCharts>
                     </div>
                 </div>
             </ElCol>
@@ -22,7 +23,7 @@ export default defineComponent({
                         <div class={dashboardStyles.desc}>活动确认场次</div>
                     </div>
                     <div class={dashboardStyles.icon}>
-                        {/* <ElIcon name={'el-icon-medal'}></ElIcon> */}
+                        <TotalCharts></TotalCharts>
                     </div>
                 </div>
             </ElCol>
@@ -33,7 +34,7 @@ export default defineComponent({
                         <div class={dashboardStyles.desc}>活动待定场次</div>
                     </div>
                     <div class={dashboardStyles.icon}>
-                        {/* <ElIcon name={'el-icon-medal'}></ElIcon> */}
+                        <TotalCharts></TotalCharts>
                     </div>
                 </div>
             </ElCol>
@@ -44,7 +45,7 @@ export default defineComponent({
                         <div class={dashboardStyles.desc}>活动撤销场次</div>
                     </div>
                     <div class={dashboardStyles.icon}>
-                        <ElIcon name={'el-icon-medal'}></ElIcon>
+                        <TotalCharts></TotalCharts>
                     </div>
                 </div>
             </ElCol>
