@@ -1,4 +1,4 @@
-import { ElButton, ElCheckbox, ElForm, ElFormItem, ElInput, ElLink, ElMessage, ElRow , ElCol } from "element-plus";
+import { ElButton, ElCheckbox, ElForm, ElFormItem, ElInput, ElLink, ElMessage, ElRow, ElCol } from "element-plus";
 import { defineComponent, reactive } from "vue";
 import loginStyles from './login.module.scss';
 
@@ -22,11 +22,11 @@ export default defineComponent({
                     type: 'success'
                 });
                 var timer = setInterval(() => {
-                    if(phoneState.waittimes === 0){
+                    if (phoneState.waittimes === 0) {
                         phoneState.waiting = false;
                         clearInterval(timer);
                     }
-                } , 1000);
+                }, 1000);
             }, 3000);
         }
         return <ElForm>
@@ -40,12 +40,15 @@ export default defineComponent({
                     <ElCol span={14}>
                         <ElInput modelValue={phoneState.validCode} prefixIcon={'el-icon-message'}></ElInput>
                     </ElCol>
+
                     <ElCol span={5} offset={1}>
-                        <ElButton onclick={getAuth} disabled={phoneState.waiting} type={'primary'}>
-                            {
-                                phoneState.waiting ? `（${phoneState.waittimes}）秒后发送` : '获取验证码'
-                            }
-                        </ElButton>
+                        <div onClick={getAuth}>
+                            <ElButton disabled={phoneState.waiting} type={'primary'}>
+                                {
+                                    phoneState.waiting ? `（${phoneState.waittimes}）秒后发送` : '获取验证码'
+                                }
+                            </ElButton>
+                        </div>
                     </ElCol>
                 </ElRow>
             </ElFormItem>

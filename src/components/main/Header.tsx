@@ -29,7 +29,7 @@ export default defineComponent({
             <div class={[mainStyles.logo, !mainState.menuToggle ? mainStyles.uncollapsed : mainStyles.collapsedLogo]}>{!mainState.menuToggle ? <img src={elmFull}/> : <span class={mainStyles.logo}><img src={elmFull}/></span>}</div>
             <div class={mainStyles.toolbar}>
                 <ElButtonGroup>
-                    <ElButton onclick={toggle} class={[mainStyles.btnLeft, mainStyles.toolBtn]} size={'small'} type={'primary'} icon={mainState.menuToggle ? 'el-icon-s-fold' : 'el-icon-s-unfold'}>
+                    <ElButton class={[mainStyles.btnLeft, mainStyles.toolBtn]} size={'small'} type={'primary'} icon={mainState.menuToggle ? 'el-icon-s-fold' : 'el-icon-s-unfold'}>
                     </ElButton>
                     <ElButton class={[mainStyles.btnCenter, mainStyles.toolBtn]} size={'small'} type={'primary'} icon={'el-icon-s-flag'}>
                     </ElButton>

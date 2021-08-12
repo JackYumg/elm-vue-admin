@@ -8,7 +8,9 @@ export default defineConfig({
   mode: 'dev',
   plugins: [
     vue(),
-    vuejsx(),
+    vuejsx({
+      transformOn: true,
+    }),
     styleImport({
       libs: [
         {
