@@ -1,7 +1,7 @@
 import { ElAvatar, ElRow, ElCol } from "element-plus";
 import { defineComponent } from "vue";
 import { useStore } from "vuex";
-import { appkey } from "../../store";
+import { appkey } from "@store/index";
 import mainStyles from './main.module.scss';
 export default defineComponent({
     render() {

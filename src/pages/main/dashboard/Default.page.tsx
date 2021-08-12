@@ -7,9 +7,6 @@ import ImgCardComponent from "./default/ImgCard.component";
 import ListCompoent from "./default/List.compoent";
 import MonthCountComponent from "./default/MonthCount.component";
 export default defineComponent({
-    components: {
-        BoxComponents
-    },
     render() {
         return <div class={dashboardStyles.defaultPage}>
             <div class={dashboardStyles.nav}>

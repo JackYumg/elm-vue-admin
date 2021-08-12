@@ -1,7 +1,7 @@
 import { defineComponent } from "vue";
-import { ElAside, ElContainer, ElFooter, ElHeader, ElMain } from 'element-plus';
+import { ElContainer, ElHeader, ElMain } from 'element-plus';
 import passportClasses from './main.module.scss';
-import Menu from "../../components/main/Menu";
+import Menu from "@components/main/Menu";
 import Header from "../../components/main/Header";
 import UserInfo from "../../components/main/UserInfo";
 import { useStore } from "vuex";

@@ -1,9 +1,9 @@
 import { ElAvatar, ElButton, ElButtonGroup, ElIcon, ElInput } from "element-plus";
 import { defineComponent, reactive } from "vue";
 import { useStore } from "vuex";
-import { appkey } from "../../store";
+import { appkey } from '@store/index'
 import mainStyles from './main.module.scss';
-import elmFull from './../../assets/header/elm-full.svg';
+import elmFull from '@assets/header/elm-full.svg';
 export default defineComponent({
     render() {
         const store = useStore(appkey);
@@ -16,20 +16,18 @@ export default defineComponent({
 
         const focusEvent = () => {
             queryState.isFocus = true;
-            console.log(queryState.isFocus);
         }
 
         const blurEvent = () => {
             queryState.isFocus = false;
-            console.log(queryState.isFocus);
         }
 
         const mainState = store.state.main;
         return <div class={[mainStyles.header, mainStyles.default]}>
-            <div class={[mainStyles.logo, !mainState.menuToggle ? mainStyles.uncollapsed : mainStyles.collapsedLogo]}>{!mainState.menuToggle ? <img src={elmFull}/> : <span class={mainStyles.logo}><img src={elmFull}/></span>}</div>
+            <div class={[mainStyles.logo, !mainState.menuToggle ? mainStyles.uncollapsed : mainStyles.collapsedLogo]}>{!mainState.menuToggle ? <img src={elmFull} /> : <span class={mainStyles.logo}><img src={elmFull} /></span>}</div>
             <div class={mainStyles.toolbar}>
                 <ElButtonGroup>
-                    <ElButton class={[mainStyles.btnLeft, mainStyles.toolBtn]} size={'small'} type={'primary'} icon={mainState.menuToggle ? 'el-icon-s-fold' : 'el-icon-s-unfold'}>
+                    <ElButton onClick={toggle}  class={[mainStyles.btnLeft, mainStyles.toolBtn]} size={'small'} type={'primary'} icon={mainState.menuToggle ? 'el-icon-s-fold' : 'el-icon-s-unfold'}>
                     </ElButton>
                     <ElButton class={[mainStyles.btnCenter, mainStyles.toolBtn]} size={'small'} type={'primary'} icon={'el-icon-s-flag'}>
                     </ElButton>
@@ -39,15 +37,15 @@ export default defineComponent({
             </div>
             <div class={mainStyles.query}>
                 {
-                    queryState.isFocus ? 
-                    <ElInput onblur={blurEvent} onFocus={focusEvent} size={'small'} prefixIcon={'el-icon-search'}></ElInput> : 
-                    <ElInput onblur={blurEvent} onFocus={focusEvent} size={'small'} prefixIcon={'el-icon-back'}>
-                    </ElInput>
+                    queryState.isFocus ?
+                        <ElInput onblur={blurEvent} onFocus={focusEvent} size={'small'} prefixIcon={'el-icon-search'}></ElInput> :
+                        <ElInput onblur={blurEvent} onFocus={focusEvent} size={'small'} prefixIcon={'el-icon-back'}>
+                        </ElInput>
                 }
             </div>
             <div class={mainStyles.toolbarMsg}>
                 <ElButtonGroup>
-                    <ElButton onclick={toggle} class={[mainStyles.btnLeft, mainStyles.toolBtn]} size={'small'} type={'primary'} icon={'el-icon-bell'}>
+                    <ElButton class={[mainStyles.btnLeft, mainStyles.toolBtn]} size={'small'} type={'primary'} icon={'el-icon-bell'}>
                     </ElButton>
                     <ElButton class={[mainStyles.btnCenter, mainStyles.toolBtn]} size={'small'} type={'primary'} icon={'el-icon-bell'}>
                     </ElButton>

@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:preview": "vite build --mode preview",
+    "preivew": "vite preview --port 8080",
+    "build:preview": "vite build && vite preview --port 8080",
     "lint": "eslint --fix --ext .ts,.tsx,.json src"
   },
   "dependencies": {
@@ -14,8 +15,10 @@
     "axios": "^0.21.1",
     "echarts": "^5.1.2",
     "element-plus": "^1.0.2-beta.55",
+    "eslint-import-resolver-alias": "^1.1.2",
     "sass": "^1.35.2",
     "scss": "^0.2.4",
+    "tsconfig-paths": "^3.10.1",
     "vue": "^3.0.5",
     "vue-i18n": "9.x",
     "vue-router": "4",

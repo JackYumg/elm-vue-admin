@@ -1,5 +1,4 @@
 import { RouteRecordRaw } from "vue-router";
-import mainPage from "../pages/main/main.page";
 import { mainRoutes } from "./main/main.router";
 import { passportRoutes } from "./passport";
 export const rootRoutes: RouteRecordRaw[] = [
@@ -8,7 +7,7 @@ export const rootRoutes: RouteRecordRaw[] = [
         ...passportRoutes
     },
     {
-        path: '/main', component: mainPage, children: [
+        path: '/main', component: () => import('@pages/main/main.page'), children: [
             ...mainRoutes
         ]
     }

@@ -1,7 +1,7 @@
 import { InjectionKey } from "vue";
 import { createStore, Store } from "vuex";
-import { rootModule } from "./modules";
-import mainMutations from "./mutations"
+import { rootModule } from "@store/modules";
+import mainMutations from "@store/mutations"
 export const store = {
     namespaced: true,
     modules: {

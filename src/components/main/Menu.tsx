@@ -1,10 +1,10 @@
 import { ElIcon, ElMenu, ElMenuItem, ElMenuItemGroup, ElSubmenu } from "element-plus";
 import { defineComponent } from "vue";
-import { ElMenuGroupIn, ElMenuIn } from "../../@types/menu";
+import { ElMenuGroupIn } from "../../@types/menu";
 import { menus } from "./Menu.data";
 import mainStyles from './main.module.scss';
 import { useStore } from "vuex";
-import { appkey } from "../../store";
+import { appkey } from "@store/index";
 export default defineComponent({
     render() {
         const store = useStore(appkey);

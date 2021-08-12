@@ -1,15 +1,12 @@
 import { RouteRecordRaw } from "vue-router";
-import AnaylzePage from "../../pages/main/dashboard/Anaylze.page";
-import DashboardPage from "../../pages/main/dashboard/Dashboard.page";
-import DefaultPage from "../../pages/main/dashboard/Default.page";
 export const mainRoutes: RouteRecordRaw[] = [
-    { path: '' , redirect: '/main/dashboard'},
+    { path: '', redirect: '/main/dashboard' },
     {
-        path: 'dashboard', component: DashboardPage,
+        path: 'dashboard', component: () => import('@pages/main/dashboard/Dashboard.page'),
         children: [
-            { path: '' , redirect: '/main/dashboard/default'},
-            { path: 'default', component: DefaultPage },
-            { path: 'analyze' , component: AnaylzePage}
+            { path: '', redirect: '/main/dashboard/default' },
+            { path: 'default', component: () => import('@pages/main/dashboard/Default.page') },
+            { path: 'analyze', component: () => import('@pages/main/dashboard/Anaylze.page') }
         ]
     }
 ];

@@ -1,4 +1,4 @@
-import { ElMenuGroupIn, ElMenuIn } from "../../@types/menu";
+import { ElMenuGroupIn } from "../../@types/menu";
 
 
 export const menus: ElMenuGroupIn[] = [

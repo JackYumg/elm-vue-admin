@@ -1,7 +1,7 @@
 import { defineComponent } from "vue";
 import PropTypes from "../../@types/vue-types";
 import styles from './Box.component.module.scss';
-import util from './../../@utils/props.util';
+import util from '@utils/props.util';
 const propsType = {
     elTitle: PropTypes.VNodeChild,
     extra: PropTypes.VNodeChild
