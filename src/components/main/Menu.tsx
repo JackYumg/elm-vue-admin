@@ -5,11 +5,10 @@ import { menus } from "./Menu.data";
 import mainStyles from './main.module.scss';
 import { useStore } from "vuex";
 import { appkey } from "../../store";
-import { MainState } from "../../store/modules/main/main.vuex";
 export default defineComponent({
     render() {
         const store = useStore(appkey);
-        return <ElMenu collapse={store.state.main.menuToggle} class={[mainStyles.menu]}>
+        return <ElMenu router={true} collapse={store.state.main.menuToggle} class={[mainStyles.menu]}>
             {
                 this.buildMenus(menus)
             }
@@ -24,7 +23,7 @@ export default defineComponent({
                     {
                         group.menus.map((menu, index) => {
                             return <ElSubmenu
-                                index={index.toString()}
+                                index={menu.path}
                                 v-slots={{
                                     title: () => <span>
                                         <ElIcon name={menu.icon} />
@@ -33,7 +32,7 @@ export default defineComponent({
                                 }}>
                                 {
                                     menu.children.map((subMenu, itemIndex) => {
-                                        return <ElMenuItem key={itemIndex} index={itemIndex.toString()}>
+                                        return <ElMenuItem key={itemIndex} index={subMenu.path}>
                                             {subMenu.title}
                                         </ElMenuItem>
                                     })

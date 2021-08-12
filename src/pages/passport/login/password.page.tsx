@@ -1,4 +1,4 @@
-import { ElButton, ElCheckbox, ElForm, ElFormItem, ElInput, ElLink, ElRow , ElCol} from "element-plus";
+import { ElButton, ElCheckbox, ElForm, ElFormItem, ElInput, ElLink, ElRow, ElCol } from "element-plus";
 import { defineComponent, reactive } from "vue";
 import loginStyles from './login.module.scss';
 

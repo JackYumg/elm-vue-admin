@@ -9,8 +9,8 @@ export const menus: ElMenuGroupIn[] = [
                 title: '导航页',
                 'icon': 'odometer',
                 children: [
-                    { title: '默认页', children: [] },
-                    { title: '分析页' , children: []},
+                    { title: '默认页', children: [] , path: 'default' },
+                    { title: '分析页' , children: [] , path: 'analyze'},
                     { title: '监控页' , children: []},
                     { title: '工作台' , children: []},
                 ]

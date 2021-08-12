@@ -24,10 +24,14 @@
         }
     }
 
-    .item {
+    .col-item{
         margin-bottom: 16px;
+    }
+
+    .item {
         .itemCol {
             color: $--color-white;
+            margin-bottom: 16px;
             .box {
                 display: flex;
                 border-radius: 2px;
