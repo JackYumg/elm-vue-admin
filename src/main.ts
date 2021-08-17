@@ -1,4 +1,4 @@
-import { ElAside, ElAvatar, ElButton, ElCheckbox, ElContainer, ElDropdown, ElDropdownItem, ElDropdownMenu, ElFooter, ElForm, ElFormItem, ElHeader, ElIcon, ElInput, ElLink, ElMain, ElMenu, ElMenuItem, ElMenuItemGroup, ElMessage, ElRow, ElSubmenu, ElTabs, locale } from 'element-plus'
+import { ElAside, ElAvatar, ElButton, ElCheckbox, ElContainer, ElDatePicker, ElDropdown, ElDropdownItem, ElDropdownMenu, ElFooter, ElForm, ElFormItem, ElHeader, ElIcon, ElInput, ElLink, ElMain, ElMenu, ElMenuItem, ElMenuItemGroup, ElMessage, ElRow, ElSubmenu, ElTabs, locale } from 'element-plus'
 import { createApp } from 'vue'
 import App from './App'
 // import lang from 'element-plus/lib/locale/lang/zh-cn'
@@ -51,7 +51,8 @@ const elementPlugins = [
     ElFormItem,
     ElInput,
     ElCheckbox,
-    ElMessage
+    ElMessage,
+    ElDatePicker
 ];
 
 function applyPlugins() {

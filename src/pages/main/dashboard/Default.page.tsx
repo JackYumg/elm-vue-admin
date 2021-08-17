@@ -1,4 +1,4 @@
-import { ElCol, ElIcon, ElRow } from "element-plus";
+import { ElCol, ElRow } from "element-plus";
 import { defineComponent } from "vue";
 import dashboardStyles from './dashboard.module.scss';
 import BoxComponents from './default/Boxs.component';

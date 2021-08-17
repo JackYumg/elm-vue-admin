@@ -1,7 +1,16 @@
 import { defineComponent } from "vue";
+import dashboardStyles from './dashboard.module.scss';
+import Box1Component from "./anaylze/Box1.component";
+import Box2Component from "./anaylze/Box2.component";
 
 export default defineComponent({
-    render(){
-        return <div>1212</div>
+    mounted() {
+        
+    },
+    render() {
+        return <div class={dashboardStyles.anaylzePage}>
+            <Box1Component/>
+            <Box2Component/>
+        </div>
     }
 })

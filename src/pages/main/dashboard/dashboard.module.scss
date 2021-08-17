@@ -1,66 +1,70 @@
 @import "./../.../../../../core/element-variables.scss";
 .default-page {
-    .nav {
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: -24px;
+    margin-bottom: 24px;
+    margin-left: -24px;
+    margin-top: -24px;
+    padding: 8px 24px;
+    color: #929292;
+    background-color: #fafbfc;
+    border-bottom: 1px solid #efe3e5;
+    h1 {
+      margin-bottom: 0;
+      font-weight: 400;
+      font-size: 18px;
+    }
+    small {
+      display: block;
+      color: #8c8c8c;
+      font-size: 12px;
+    }
+  }
+
+  .col-item {
+    margin-bottom: 16px;
+  }
+
+  .item {
+    .itemCol {
+      color: $--color-white;
+      margin-bottom: 16px;
+      .box {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-right: -24px;
-        margin-bottom: 24px;
-        margin-left: -24px;
-        margin-top: -24px;
-        padding: 8px 24px;
-        color: #929292;
-        background-color: #fafbfc;
-        border-bottom: 1px solid #efe3e5;
-        h1 {
-            margin-bottom: 0;
-            font-weight: 400;
-            font-size: 18px;
+        border-radius: 2px;
+        &.primary {
+          background-color: $--color-primary;
         }
-        small {
-            display: block;
-            color: #8c8c8c;
-            font-size: 12px;
+        &.success {
+          background-color: $--color-success;
         }
+        &.warning {
+          background-color: $--color-warning;
+        }
+        &.danger {
+          background-color: $--color-danger;
+        }
+        .title {
+          flex: 1;
+          margin: 16px;
+          .h2 {
+            font-size: 26px;
+          }
+          .desc {
+            flex: 1;
+          }
+        }
+        .icon {
+          flex: 1;
+        }
+      }
     }
+  }
+}
 
-    .col-item{
-        margin-bottom: 16px;
-    }
-
-    .item {
-        .itemCol {
-            color: $--color-white;
-            margin-bottom: 16px;
-            .box {
-                display: flex;
-                border-radius: 2px;
-                &.primary {
-                    background-color: $--color-primary;
-                }
-                &.success {
-                    background-color: $--color-success;
-                }
-                &.warning {
-                    background-color: $--color-warning;
-                }
-                &.danger {
-                    background-color: $--color-danger;
-                }
-                .title {
-                    flex: 1;
-                    margin: 16px;
-                    .h2 {
-                        font-size: 26px;
-                    }
-                    .desc {
-                        flex: 1;
-                    }
-                }
-                .icon {
-                    flex: 1;
-                }
-            }
-        }
-    }
+.anaylze-page {
+  margin-top: 40px;
 }
