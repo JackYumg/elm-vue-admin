@@ -9,20 +9,20 @@ export const menus: ElMenuGroupIn[] = [
                 title: '导航页',
                 'icon': 'odometer',
                 children: [
-                    { title: '默认页', children: [] , path: 'default' },
-                    { title: '分析页' , children: [] , path: 'analyze'},
-                    { title: '监控页' , children: []},
-                    { title: '工作台' , children: []},
+                    { title: '默认页', children: [], path: 'default' },
+                    { title: '分析页', children: [], path: 'analyze' },
+                    { title: '监控页', children: [], path: 'monitor' },
+                    { title: '工作台', children: [], path: 'workplace' },
                 ]
             },
             {
                 title: '快捷菜单',
                 'icon': 'position',
                 children: [
-                    { title: '字体排版', children: [] },
-                    { title: '分析页' , children: []},
-                    { title: '监控页' , children: []},
-                    { title: '工作台' , children: []},
+                    { title: '字体排版', children: [] , path: 'typography' },
+                    { title: '基础表单', children: [] , path: 'basic-form' },
+                    { title: '查询表格', children: [] , path: 'table-list'},
+                    { title: '搜索列表（项目）', children: [] , path: 'projects' },
                 ]
             }
         ]

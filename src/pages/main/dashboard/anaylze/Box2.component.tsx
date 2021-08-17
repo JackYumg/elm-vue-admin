@@ -52,7 +52,7 @@ export default defineComponent({
     },
     render() {
         const state = reactive({
-           queryDate: new Date() 
+            queryDate: [new Date(), new Date()]
         });
         return <div class={anaylzeStyles.nav2}>
             <ElCard bodyStyle={{ padding: '8px 20px' }}>
@@ -87,7 +87,7 @@ export default defineComponent({
                     <ElButton size={'small'}>全年</ElButton>
                 </ElButtonGroup>
                 &nbsp;
-                <ElDatePicker defaultTime={new Date()} modelValue={state.queryDate} format="YYYY-MM-dd" type="daterange" size={'small'}></ElDatePicker>
+                <ElDatePicker defaultTime={[new Date(), new Date()]} modelValue={state.queryDate} format="YYYY-MM-DD" type="daterange" size={'small'}></ElDatePicker>
             </div>
         </div>
     }

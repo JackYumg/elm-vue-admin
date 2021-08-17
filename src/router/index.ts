@@ -7,7 +7,7 @@ export const rootRoutes: RouteRecordRaw[] = [
         ...passportRoutes
     },
     {
-        path: '/main', component: () => import('@pages/main/main.page'), children: [
+       name: 'main', path: '/main', component: () => import('@pages/main/main.page'), children: [
             ...mainRoutes
         ]
     }

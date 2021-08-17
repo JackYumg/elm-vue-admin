@@ -23,7 +23,7 @@ export default defineComponent({
                     {
                         group.menus.map((menu, index) => {
                             return <ElSubmenu
-                                index={menu.path}
+                                index={index + ''}
                                 v-slots={{
                                     title: () => <span>
                                         <ElIcon name={menu.icon} />
@@ -32,7 +32,7 @@ export default defineComponent({
                                 }}>
                                 {
                                     menu.children.map((subMenu, itemIndex) => {
-                                        return <ElMenuItem key={itemIndex} index={subMenu.path}>
+                                        return <ElMenuItem key={index + '-' + itemIndex} index={subMenu.path}>
                                             {subMenu.title}
                                         </ElMenuItem>
                                     })

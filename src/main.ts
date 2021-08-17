@@ -20,6 +20,14 @@ const router = VueRouter.createRouter({
     history: VueRouter.createWebHashHistory(),
     routes: rootRoutes
 });
+// router.beforeEach( (to , from , next ) => {
+//     const { matched } = to;
+//     if(matched && matched.length > 0) {
+//         next();
+//     } else {
+//         next({name: 'main'});
+//     }
+// });
 // const i18n = createI18n({
 //     locale: zhLocale.name,
 //     fallbackLocale: enLocale.name,
