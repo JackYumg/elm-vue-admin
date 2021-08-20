@@ -1,4 +1,5 @@
 import { StoreOptions } from "vuex"
+import defaultOption from "./dashboard/default.vuex"
 export interface MainState {
     menuToggle: boolean
 }
@@ -21,6 +22,9 @@ const mainOption: StoreOptions<MainState> = {
     },
     getters: {
         mainGetter
+    },
+    modules: {
+        defaultM: defaultOption
     }
 }
 

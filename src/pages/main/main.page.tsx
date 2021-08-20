@@ -13,6 +13,7 @@ export default defineComponent({
     },
     render() {
         const store = useStore(appkey);
+        console.log(store);
         const mainState = store.state.main;
         return <ElContainer class={passportClasses.container}>
             <ElHeader class={passportClasses.header}>

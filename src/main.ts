@@ -1,38 +1,21 @@
+
 import { ElAside, ElAvatar, ElButton, ElCheckbox, ElContainer, ElDatePicker, ElDropdown, ElDropdownItem, ElDropdownMenu, ElFooter, ElForm, ElFormItem, ElHeader, ElIcon, ElInput, ElLink, ElMain, ElMenu, ElMenuItem, ElMenuItemGroup, ElMessage, ElRow, ElSubmenu, ElTabs, locale } from 'element-plus'
 import { createApp } from 'vue'
 import App from './App'
-// import lang from 'element-plus/lib/locale/lang/zh-cn'
-import '@core/element-variables.scss'
-import '@core/style.scss'
 
 import { rootRoutes } from '@router/index'
 import * as VueRouter from 'vue-router'
-// import { createI18n } from 'vue-i18n'
-// import enLocale from 'element-plus/lib/locale/lang/en'
-// import zhLocale from 'element-plus/lib/locale/lang/zh-cn'
-// import { i18Messages } from '@core/i18n/i8n.message'
 import { appkey, rootStore } from '@store/index'
-// locale(lang);
-// 国际化配置
+import '@core/element-variables.scss'
+import '@core/style.scss'
+import VMMock from 'vmmock';
+import axios from 'axios';
 // 路由配置
 const app = createApp(App);
 const router = VueRouter.createRouter({
     history: VueRouter.createWebHashHistory(),
     routes: rootRoutes
 });
-// router.beforeEach( (to , from , next ) => {
-//     const { matched } = to;
-//     if(matched && matched.length > 0) {
-//         next();
-//     } else {
-//         next({name: 'main'});
-//     }
-// });
-// const i18n = createI18n({
-//     locale: zhLocale.name,
-//     fallbackLocale: enLocale.name,
-//     messages: i18Messages,
-// })
 
 // 引入 element组件
 // 组件注册
@@ -69,8 +52,32 @@ function applyPlugins() {
     });
 }
 applyPlugins();
-
+var mock = new VMMock();
+mock.setUp({
+    timeout: 4000,
+    basepath: '/apis',
+    logger: true
+});
+mock.mouteAxios(axios);
+mock.setMockData([
+    {
+        url: '/apis/images', method: 'get', type: 'iamge', option: {
+            size: 300,
+            background: '#fff',
+            text: '我是红色的',
+            foreground: '#8878dd',
+            format: 'jpg'
+        }
+    },
+    {
+        url: '/apis/date', method: 'get', type: 'date', option: {
+            min: '2018-10-22 12:12:44', max: '2021-10-22 12:12:44', formate: 'yyyy年MM月dd日 HH时mm分ss秒', unit: 'year', isNow: false
+        }
+    },
+    {
+        url: '/apis/number' , method: 'get' , type: 'number' , option: 'range|1-200'
+    }
+]);
 app.use(rootStore, appkey);
-// app.use(i18n);
 app.use(router);
 app.mount('#app');

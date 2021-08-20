@@ -1,40 +1,31 @@
 import { ElCard, ElCarousel, ElCarouselItem } from "element-plus";
 import { defineComponent } from "vue";
 import defaultStyle from './Box.module.scss';
-
+import { useStore } from 'vuex';
+import { appkey } from '@store/index';
 export default defineComponent({
-    data: () => {
-        return {
-            dataInfo: {
-                title: '活动简介',
-                desc: '活动内容概述',
-                context: `Designed by experienced team, and showcase dozens of inspiring projects.
-                Provide solutions for usual problems that may be encountered while developing enterprise-like complex UIs.
-                Dozens of flexible and practical reusable components that increase your productivity.`,
-                url: 'https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png',
-                images: [
-                    'https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png',
-                    'https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png',
-                    'https://os.alipayobjects.com/rmsportal/GhjqstwSgxBXrZS.png',
-                ]
-            }
-        }
+    mounted() {
+        const store = useStore(appkey);
+        store.dispatch('getImageList');
     },
+
     render() {
+        const store = useStore(appkey);
+        console.log(store.state.main.defaultM)
         return <ElCard class={defaultStyle.imgCard}>
             <ElCarousel>
                 {
-                    this.dataInfo.images.map((url , index) => {
+                    store.state.main.defaultM.imageState.images.map((url: string, index: number) => {
                         <ElCarouselItem key={index}>
                             <img src={url} class="image" />
                         </ElCarouselItem>
                     })
                 }
             </ElCarousel>
-            <h3>{this.dataInfo.title}</h3>
-            <div class={defaultStyle.desc}>{this.dataInfo.desc}</div>
+            <h3>{store.state.main.defaultM.imageState.title}</h3>
+            <div class={defaultStyle.desc}>{store.state.main.defaultM.imageState.desc}</div>
             <p>
-                {this.dataInfo.context}
+                {store.state.main.defaultM.imageState.context}
             </p>
             <a class={defaultStyle.website}>浏览更多</a>
         </ElCard>
