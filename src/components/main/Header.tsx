@@ -54,8 +54,7 @@ export default defineComponent({
                     <ElButton class={[mainStyles.btnRight, mainStyles.toolBtn]} size={'small'} type={'primary'} icon={'el-icon-setting'}>
                     </ElButton>
                     <ElButton class={[mainStyles.btnRight, mainStyles.toolBtn]} size={'small'} type={'primary'}>
-                        <ElAvatar style={{ width: '16px', height: '16px' }} size={'small'} src={'https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png'}></ElAvatar>
-                        <span>Admin</span>
+                        <span><ElAvatar style={{ width: '14px', height: '14px' }} size={'small'} src={'https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png'}></ElAvatar></span>
                     </ElButton>
                 </ElButtonGroup>
             </div>
