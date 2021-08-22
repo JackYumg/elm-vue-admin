@@ -10,6 +10,7 @@ import '@core/element-variables.scss'
 import '@core/style.scss'
 import VMMock from 'vmmock';
 import axios from 'axios';
+import { windowEvent } from '@utils/event'
 // 路由配置
 const app = createApp(App);
 const router = VueRouter.createRouter({

@@ -1804,6 +1804,13 @@ rollup@^2.38.5:
   optionalDependencies:
     fsevents "~2.3.2"
 
+rxjs@^7.3.0:
+  version "7.3.0"
+  resolved "https://repo.huaweicloud.com/repository/npm/rxjs/-/rxjs-7.3.0.tgz#39fe4f3461dc1e50be1475b2b85a0a88c1e938c6"
+  integrity sha512-p2yuGIg9S1epc3vrjKf6iVb3RCaAYjYskkO+jHIaV0IjOPlJop4UnodOoFb2xeNwlguqLYvGw1b1McillYb5Gw==
+  dependencies:
+    tslib "~2.1.0"
+
 safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.2"
   resolved "https://registry.nlark.com/safe-buffer/download/safe-buffer-5.1.2.tgz#991ec69d296e0313747d59bdfd2b745c35f8828d"
@@ -2012,6 +2019,11 @@ tslib@^2.0.3:
   version "2.3.0"
   resolved "https://registry.nlark.com/tslib/download/tslib-2.3.0.tgz#803b8cdab3e12ba581a4ca41c8839bbb0dacb09e"
   integrity sha1-gDuM2rPhK6WBpMpByIObuw2ssJ4=
+
+tslib@~2.1.0:
+  version "2.1.0"
+  resolved "https://repo.huaweicloud.com/repository/npm/tslib/-/tslib-2.1.0.tgz#da60860f1c2ecaa5703ab7d39bc05b6bf988b97a"
+  integrity sha512-hcVC3wYEziELGGmEEXue7D75zbwIIVUMWAVbHItGPx0ziyXxrOMQx4rQEVEV45Ut/1IotuEvwqPopzIOkDMf0A==
 
 type-check@^0.4.0, type-check@~0.4.0:
   version "0.4.0"

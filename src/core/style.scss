@@ -1,8 +1,43 @@
-body, #app{
+body,
+#app {
     padding: 0;
     margin: 0;
     height: 100vh;
     width: 100vw;
     font-size: 14px;
     overflow: hidden;
+}
+$bs: 4px;
+.arrow-up {
+    position: relative;
+    &::after {
+        content: "";
+        border: $bs solid red;
+        width: 0;
+        height: 0;
+        display: inline-block;
+        border-left: $bs solid transparent;
+        border-right: $bs solid transparent;
+        border-top: $bs solid transparent;
+        position: absolute;
+        margin-left: 4px;
+        bottom: 6px;
+    }
+}
+
+.arrow-down {
+    position: relative;
+    &::after {
+        content: "";
+        border: $bs solid green;
+        width: 0;
+        height: 0;
+        display: inline-block;
+        border-left: $bs solid transparent;
+        border-right: $bs solid transparent;
+        border-bottom: $bs solid transparent;
+        position: absolute;
+        margin-left: 4px;
+        bottom: 4px;
+    }
 }

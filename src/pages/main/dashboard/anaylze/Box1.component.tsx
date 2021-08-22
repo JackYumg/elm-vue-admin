@@ -51,10 +51,10 @@ export default defineComponent({
                         <p class={AnaylzeStyles.total}>¥ 126,560</p>
                     </div>
                     <div class={AnaylzeStyles.desc}>
-                        <p>
+                        <p class="arrow-up">
                             周同比 23%
                         </p>
-                        <p>
+                        <p class="arrow-down">
                             日同比 18%
                         </p>
                     </div>
