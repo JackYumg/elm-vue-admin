@@ -2120,10 +2120,10 @@ vite@^2.4.3:
   optionalDependencies:
     fsevents "~2.3.2"
 
-vmmock@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.npmjs.org/vmmock/-/vmmock-1.0.2.tgz#2bb7028b3b0efc9b9557143334a606a5abd71611"
-  integrity sha512-IHbQDQ3JfCZq82fSKNRnYTyueKBY06XNdP3CUwMDZqO7TpscNcktIj2Km/pavEVXhXid818b/N9CtDqvR/UeFQ==
+vmmock@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.npmjs.org/vmmock/-/vmmock-1.0.8.tgz#03f6386264c12ec12d947a39d179e54608f4caf9"
+  integrity sha512-VXvDU7hZxMyf62YWwdu01YfNiJpV8SYkVfGB1GsqQ7gc2YQ1bC7/St/oAh64uEZCqekESDTWdqz50FcTNOTRMA==
   dependencies:
     path-to-regexp "^6.2.0"
     url "^0.11.0"
