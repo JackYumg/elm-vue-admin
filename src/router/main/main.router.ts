@@ -6,7 +6,8 @@ export const mainRoutes: RouteRecordRaw[] = [
         children: [
             { path: '', redirect: '/main/dashboard/default' },
             { path: 'default', component: () => import('@pages/main/dashboard/Default.page') },
-            { path: 'analyze', component: () => import('@pages/main/dashboard/Anaylze.page') }
+            { path: 'analyze', component: () => import('@pages/main/dashboard/Anaylze.page') },
+            { path: 'monitor' , component: () => import('@pages/main/dashboard/Monitor.page')}
         ]
     }
 ];
