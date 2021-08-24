@@ -11,6 +11,7 @@ import '@core/style.scss'
 import VMMock from 'vmmock';
 import axios from 'axios';
 import { windowEvent } from '@utils/event'
+import { allMockData } from './../mock/index';
 // 路由配置
 const app = createApp(App);
 const router = VueRouter.createRouter({
@@ -60,25 +61,7 @@ mock.setUp({
     logger: true
 });
 mock.mouteAxios(axios);
-mock.setMockData([
-    {
-        url: '/apis/images', method: 'get', type: 'iamge', option: {
-            size: 300,
-            background: '#fff',
-            text: '我是红色的',
-            foreground: '#8878dd',
-            format: 'jpg'
-        }
-    },
-    {
-        url: '/apis/date', method: 'get', type: 'date', option: {
-            min: '2018-10-22 12:12:44', max: '2021-10-22 12:12:44', formate: 'yyyy年MM月dd日 HH时mm分ss秒', unit: 'year', isNow: false
-        }
-    },
-    {
-        url: '/apis/number' , method: 'get' , type: 'number' , option: 'range|1-200'
-    }
-]);
+mock.setMockData(allMockData);
 app.use(rootStore, appkey);
 app.use(router);
 app.mount('#app');

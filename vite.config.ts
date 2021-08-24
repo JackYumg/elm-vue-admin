@@ -28,6 +28,9 @@ export default defineConfig({
       ]
     }),
   ],
+  json: {
+    namedExports: true
+  },
   resolve: {
     alias: {
       // 键必须以斜线开始和结束

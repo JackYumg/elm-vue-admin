@@ -1,9 +1,37 @@
 .box1 {
+  height: 546px;
+  .number-Info {
+    &-title {
+      height: 22px;
+      color: #00000073;
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+    &-value {
+      display: inline-block;
+      height: 32px;
+      color: #000000d9;
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+
+  .info{
+    margin-bottom: 16px;
+  }
+  .chat{
+    height: 480px;
+  }
 }
 
 .box2 {
   font-weight: 500;
   .chart {
-    height: 84px;
+    height: 140px;
+  }
+
+  .chart2 {
+    height: 220px;
   }
 }
