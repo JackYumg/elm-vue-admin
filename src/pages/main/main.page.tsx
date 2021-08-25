@@ -19,7 +19,7 @@ export default defineComponent({
                 <Header></Header>
             </ElHeader>
             <ElContainer>
-                <div class={[passportClasses.aside, !mainState.menuToggle ? passportClasses.uncollapsed : passportClasses.collapsed]}>
+                <div class={[passportClasses.aside, !mainState.menuToggle ? passportClasses.uncollapsed : passportClasses.collapsed , 'hidden-xs-only']}>
                     <UserInfo></UserInfo>
                     <Menu></Menu>
                 </div>

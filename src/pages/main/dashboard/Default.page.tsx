@@ -15,18 +15,18 @@ export default defineComponent({
             </div>
             <BoxComponents />
             <ElRow gutter={20}>
-                <ElCol span={12} class={dashboardStyles.colItem}>
+                <ElCol span={12} sm={12} xs={24} class={dashboardStyles.colItem}>
                     <MonthCountComponent/>
                 </ElCol>
-                <ElCol span={12} class={dashboardStyles.colItem}>
+                <ElCol span={12} sm={12} xs={24} class={dashboardStyles.colItem}>
                     <CountComponent/>
                 </ElCol>
             </ElRow>
             <ElRow gutter={20}>
-                <ElCol span={12} class={dashboardStyles.colItem}>
+                <ElCol span={12} xs={24} class={dashboardStyles.colItem}>
                     <ImgCardComponent/>
                 </ElCol>
-                <ElCol span={12} class={dashboardStyles.colItem}>
+                <ElCol span={12} xs={24} class={dashboardStyles.colItem}>
                     <ListCompoent/>
                 </ElCol>
             </ElRow>

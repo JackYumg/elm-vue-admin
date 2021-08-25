@@ -27,15 +27,15 @@ export default defineComponent({
             <div class={[mainStyles.logo, !mainState.menuToggle ? mainStyles.uncollapsed : mainStyles.collapsedLogo]}>{!mainState.menuToggle ? <img src={elmFull} /> : <span class={mainStyles.logo}><img src={elmFull} /></span>}</div>
             <div class={mainStyles.toolbar}>
                 <ElButtonGroup>
-                    <ElButton onClick={toggle}  class={[mainStyles.btnLeft, mainStyles.toolBtn]} size={'small'} type={'primary'} icon={mainState.menuToggle ? 'el-icon-s-fold' : 'el-icon-s-unfold'}>
+                    <ElButton onClick={toggle} class={[mainStyles.btnLeft, mainStyles.toolBtn]} size={'small'} type={'primary'} icon={mainState.menuToggle ? 'el-icon-s-fold' : 'el-icon-s-unfold'}>
                     </ElButton>
                     <ElButton class={[mainStyles.btnCenter, mainStyles.toolBtn]} size={'small'} type={'primary'} icon={'el-icon-s-flag'}>
                     </ElButton>
-                    <ElButton class={[mainStyles.btnRight, mainStyles.toolBtn]} size={'small'} type={'primary'} icon={'el-icon-lock'}>
+                    <ElButton class={[mainStyles.btnRight, mainStyles.toolBtn , 'hidden-sm-and-down']} size={'small'} type={'primary'} icon={'el-icon-lock'}>
                     </ElButton>
                 </ElButtonGroup>
             </div>
-            <div class={mainStyles.query}>
+            <div class={[mainStyles.query, 'hidden-sm-and-down']}>
                 {
                     queryState.isFocus ?
                         <ElInput onblur={blurEvent} onFocus={focusEvent} size={'small'} prefixIcon={'el-icon-search'}></ElInput> :
@@ -47,16 +47,16 @@ export default defineComponent({
                 <ElButtonGroup>
                     <ElButton class={[mainStyles.btnLeft, mainStyles.toolBtn]} size={'small'} type={'primary'} icon={'el-icon-bell'}>
                     </ElButton>
-                    <ElButton class={[mainStyles.btnCenter, mainStyles.toolBtn]} size={'small'} type={'primary'} icon={'el-icon-bell'}>
+                    <ElButton class={[mainStyles.btnCenter, mainStyles.toolBtn, 'hidden-sm-and-down']} size={'small'} type={'primary'} icon={'el-icon-bell'}>
                     </ElButton>
-                    <ElButton class={[mainStyles.btnRight, mainStyles.toolBtn]} size={'small'} type={'primary'} icon={'el-icon-menu'}>
+                    <ElButton class={[mainStyles.btnRight, mainStyles.toolBtn, 'hidden-sm-and-down']} size={'small'} type={'primary'} icon={'el-icon-menu'}>
                     </ElButton>
-                    <ElButton class={[mainStyles.btnRight, mainStyles.toolBtn]} size={'small'} type={'primary'} icon={'el-icon-setting'}>
+                    <ElButton class={[mainStyles.btnRight, mainStyles.toolBtn, 'hidden-sm-and-down']} size={'small'} type={'primary'} icon={'el-icon-setting'}>
                     </ElButton>
                     <ElButton class={[mainStyles.btnRight, mainStyles.toolBtn]} size={'small'} type={'primary'}>
                         <ElRow justify={'center'} align={'middle'}>
                             <ElCol span={6}>
-                            <ElAvatar style={{ width: '14px', height: '14px' }} size={'small'} src={'https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png'}></ElAvatar>
+                                <ElAvatar style={{ width: '14px', height: '14px' }} size={'small'} src={'https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png'}></ElAvatar>
                             </ElCol>
                             <ElCol span={16} offset={2}>
                                 232323
