@@ -8,7 +8,6 @@ export default defineComponent({
     mounted() {
         echarts.registerMap('重庆', d);
         const box1: any = this.$refs.box1;
-        console.log(box1);
         const instance = echarts.init(box1);
         instance.setOption((option1 as any));
     },

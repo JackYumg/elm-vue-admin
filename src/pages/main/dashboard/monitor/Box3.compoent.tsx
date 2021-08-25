@@ -5,7 +5,6 @@ import * as echarts from 'echarts';
 export default defineComponent({
     mounted(){
         const box1: any = this.$refs.box3;
-        console.log(box1);
         const instance = echarts.init(box1);
         instance.setOption((option2 as any));
     },

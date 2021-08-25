@@ -14,6 +14,8 @@
     "@vitejs/plugin-vue-jsx": "^1.1.6",
     "axios": "^0.21.1",
     "echarts": "^5.1.2",
+    "echarts-liquidfill": "^3.0.0",
+    "echarts-wordcloud": "^2.0.0",
     "element-plus": "^1.0.2-beta.55",
     "eslint-import-resolver-alias": "^1.1.2",
     "rxjs": "^7.3.0",
