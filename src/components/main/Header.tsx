@@ -1,4 +1,4 @@
-import { ElAvatar, ElButton, ElButtonGroup, ElIcon, ElInput } from "element-plus";
+import { ElAvatar, ElButton, ElButtonGroup, ElCol, ElIcon, ElInput, ElRow } from "element-plus";
 import { defineComponent, reactive } from "vue";
 import { useStore } from "vuex";
 import { appkey } from '@store/index'
@@ -54,7 +54,14 @@ export default defineComponent({
                     <ElButton class={[mainStyles.btnRight, mainStyles.toolBtn]} size={'small'} type={'primary'} icon={'el-icon-setting'}>
                     </ElButton>
                     <ElButton class={[mainStyles.btnRight, mainStyles.toolBtn]} size={'small'} type={'primary'}>
-                        <span><ElAvatar style={{ width: '14px', height: '14px' }} size={'small'} src={'https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png'}></ElAvatar></span>
+                        <ElRow justify={'center'} align={'middle'}>
+                            <ElCol span={6}>
+                            <ElAvatar style={{ width: '14px', height: '14px' }} size={'small'} src={'https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png'}></ElAvatar>
+                            </ElCol>
+                            <ElCol span={16} offset={2}>
+                                232323
+                            </ElCol>
+                        </ElRow>
                     </ElButton>
                 </ElButtonGroup>
             </div>

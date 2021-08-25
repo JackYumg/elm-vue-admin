@@ -88,7 +88,8 @@
 
     .toolbar-msg {
         width: 280px;
-
+        display: flex;
+        padding: 0 6px;
         .btn-right {
             border-left-width: 0px;
         }
