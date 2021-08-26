@@ -1,6 +1,6 @@
 {
   "name": "elm-vue-admin",
-  "version": "0.0.0",
+  "version": "1.0.8",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -22,6 +22,7 @@
     "sass": "^1.35.2",
     "scss": "^0.2.4",
     "tsconfig-paths": "^3.10.1",
+    "vite-plugin-vmmock": "^1.0.4",
     "vmmock": "^1.0.9",
     "vue": "^3.0.5",
     "vue-i18n": "9.x",
