@@ -19,7 +19,7 @@ export default defineComponent({
             const store = useStore(appkey);
             const mainState = store.state.main;
             return menus.map((group) => {
-                return <ElMenuItemGroup title={!mainState.menuToggle ? group.title: ''} key={group.title}>
+                return <ElMenuItemGroup title={!mainState.menuToggle ? group.title : ''} key={group.title}>
                     {
                         group.menus.map((menu, index) => {
                             return <ElSubmenu
@@ -32,7 +32,7 @@ export default defineComponent({
                                 }}>
                                 {
                                     menu.children.map((subMenu, itemIndex) => {
-                                        return <ElMenuItem key={index + '-' + itemIndex} index={subMenu.path}>
+                                        return <ElMenuItem key={index + '-' + itemIndex} index={['/main', menu.path, subMenu.path].join('/')}>
                                             {subMenu.title}
                                         </ElMenuItem>
                                     })
