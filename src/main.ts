@@ -1,6 +1,6 @@
 
 import { ElAside, ElAvatar, ElButton, ElCheckbox, ElContainer, ElDatePicker, ElDropdown, ElDropdownItem, ElDropdownMenu, ElFooter, ElForm, ElFormItem, ElHeader, ElIcon, ElInput, ElLink, ElMain, ElMenu, ElMenuItem, ElMenuItemGroup, ElMessage, ElRow, ElSubmenu, ElTabs, locale } from 'element-plus'
-import { createApp, provide } from 'vue'
+import { createApp } from 'vue'
 import App from './App'
 
 import { rootRoutes } from '@router/index'
@@ -8,9 +8,9 @@ import * as VueRouter from 'vue-router'
 import { appkey, rootStore } from '@store/index'
 import '@core/element-variables.scss'
 import '@core/style.scss'
-import VMMock from 'vmmock';
-import axios from 'axios';
-import { allMockData } from './../mock/index';
+// import VMMock from 'vmmock';
+// import axios from 'axios';
+// import { allMockData } from './../mock/index';
 
 // 路由配置
 const app = createApp(App);

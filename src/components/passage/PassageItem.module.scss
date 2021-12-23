@@ -1,0 +1,60 @@
+.passage-item {
+    border-bottom: 1px solid #f0f0f0;
+    padding: 12px 0;
+    display: flex;
+
+    .passage-info {
+        flex: 1;
+    }
+
+    .passage-extra {
+        width: 270px;
+
+        .grid {
+            display: grid;
+            height: 100%;
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+
+            div {
+                width: 135px;
+            }
+
+            .p1 {
+                text-align: center;
+
+                span {
+                    color: gainsboro;
+                    font-weight: 700;
+                    display: block;
+                    height: 50%;
+                }
+
+                p{
+                    margin: 0;
+                    display: block;
+                    height: 50%;
+                }
+            }
+        }
+    }
+}
+
+.publish-info {
+    display: flex;
+    justify-content: flex-start;
+
+    a {
+        color: #40a9ff;
+        font-size: 14px;
+        flex: 1;
+    }
+
+    .origin {}
+
+    .time {
+        color: #bfbfbf !important;
+        padding-left: 16px !important;
+        flex: 1;
+    }
+}

@@ -62,7 +62,7 @@ export default defineComponent({
             })));
 
             const res = useResult(query.result, {});
-            console.log(res.value.access_token);
+           
         };
 
         return <ElForm>

@@ -19,7 +19,7 @@ const initState: DefaultState = {
             Dozens of flexible and practical reusable components that increase your productivity.`,
         url: 'https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png',
         images: [
-            
+
         ]
     }
 }
@@ -40,10 +40,8 @@ const mutations = {
     }
 }
 
-const defaultOption: StoreOptions<DefaultState> = {
+export const defaultOption: StoreOptions<DefaultState> = {
     state: initState,
     actions,
     mutations
 }
-
-export default defaultOption;

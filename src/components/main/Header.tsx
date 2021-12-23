@@ -11,7 +11,8 @@ export default defineComponent({
             isFocus: false
         });
         const toggle = () => {
-            store.commit('toggleMenu');
+            console.log(store);
+            store.commit('main/toggleMenu');
         }
 
         const focusEvent = () => {

@@ -1,18 +1,17 @@
 import { InjectionKey } from "vue";
 import { createStore, Store } from "vuex";
-import { rootModule } from "@store/modules";
-import mainMutations from "@store/mutations"
+import { mainM } from './main/main.vuex';
 export const store = {
     namespaced: true,
     modules: {
-        ...rootModule
+        main: mainM
     },
     mutations: {
-        ...mainMutations
+    },
+    actions: {
     }
 }
 export class StoreOptionIn extends Store<any> {
-    main?: any
 }
 export const appkey: InjectionKey<StoreOptionIn> = Symbol()
 

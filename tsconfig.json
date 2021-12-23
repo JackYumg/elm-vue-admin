@@ -19,7 +19,8 @@
       "@utils/*": ["src/@utils/*"],
       "@router/*": ["src/router/*"],
       "@store/*": ["src/store/*"],
-      "@assets/*": ["src/assets/*"]
+      "@assets/*": ["src/assets/*"],
+      "@gql/*": ["src/gql/*"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],

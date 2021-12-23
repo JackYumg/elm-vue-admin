@@ -1,8 +1,11 @@
 import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client/core'
 import { onError } from '@apollo/client/link/error'
 import { logErrorMessages } from '@vue/apollo-util'
+import { createApolloProvider } from '@vue/apollo-option'
 
-const cache = new InMemoryCache()
+const cache = new InMemoryCache({
+    resultCaching:  false
+})
 
 // HTTP connection to the API
 const httpLink = createHttpLink({
@@ -20,3 +23,6 @@ export const apolloClient = new ApolloClient({
     link: errorLink.concat(httpLink),
 });
 
+export const apolloProvider = createApolloProvider({
+    defaultClient: apolloClient,
+  })

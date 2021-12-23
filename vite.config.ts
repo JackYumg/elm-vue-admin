@@ -42,7 +42,8 @@ export default defineConfig({
       '@router': resolve(__dirname , './src/router'),
       '@store': resolve(__dirname , './src/store'),
       '@utils': resolve(__dirname , './src/@utils'),
-      '@assets': resolve(__dirname , './src/assets')
+      '@assets': resolve(__dirname , './src/assets'),
+      '@gql': resolve(__dirname , './src/gql')
     }
   },
   assetsInclude:'./src/assets/*', 

@@ -1,5 +1,27 @@
 .passage-page {
+    padding: 20px;
     margin-left: -20px;
     margin-right: -20px;
+    margin-top: -20px;
     background: #fff;
+}
+
+.passage-list {
+    background: #fff;
+    margin-top: 20px;
+    padding: 20px;
+    .btn-load{
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+
+.loading{
+    position: relative;
+    &::after{
+        content: "加载中...";
+        background: #fff;
+        width: 100%;
+        height: 100%;
+    }
 }
