@@ -15,3 +15,6 @@ class WindowEvent {
 }
 
 export const windowEvent = new WindowEvent();
+export const isEnterEvent = (e: KeyboardEvent ) => {
+    return String.prototype.toUpperCase.call(e.key) === 'ENTER';
+}

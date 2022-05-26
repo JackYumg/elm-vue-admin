@@ -13,6 +13,7 @@
     "types": ["@types/echarts"],
     "paths": {
       "@pages/*": ["src/pages/*"],
+      "@apis/*": ["src/apis/*"],
       "@components/*": ["src/components/*"],
       "@core/*": ["src/core/*"],
       "@types/*": ["src/@types/*"],

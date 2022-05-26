@@ -4,6 +4,7 @@ import { reactive } from "vue";
 import { defineComponent } from "vue";
 import PassageItemStyle from './PassageItem.module.scss';
 import moment from 'moment';
+import { RouterLink } from "vue-router";
 export default defineComponent({
     props: {
         passage: {
@@ -73,8 +74,10 @@ export default defineComponent({
                         <p>收藏 <ElIcon name={'star-off'}></ElIcon></p>
                         <span>1290</span>
                     </div>
-                    <div>修改</div>
-                    <div>删除</div>
+                    <div class={PassageItemStyle.p1}>
+                        <RouterLink to={{ name: 'formedit' , path: '/main/passage-form' , params: {id: publishDate.passage.id}}}>修改</RouterLink>
+                    </div>
+                    <div class={PassageItemStyle.p1}>删除</div>
                 </div>
             </div>
         </div>

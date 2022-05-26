@@ -3,6 +3,7 @@ import { ElButton, ElForm, ElFormItem, ElInput, ElLoading, ElOption, ElSelect } 
 import { reactive } from "vue";
 import { onMounted } from "vue";
 import { defineComponent } from "vue";
+import { RouterLink } from "vue-router";
 import { useStore } from "vuex";
 import PassageStyle from './passage.module.scss';
 import PassageList from './passageList/Passage-list.page';
@@ -57,9 +58,19 @@ export default defineComponent({
         }
         onMounted(() => {
             search();
-        })
+        });
 
-        return () => <section>
+        const PassageCreate = () => {
+            const createPassage = () => {
+                console.log(this);
+            }
+            return <ElButton type={'primary'} onClick={createPassage}>
+                <RouterLink to={{name: 'formadd' , path: '/main/passage-form/'}}>创建</RouterLink>
+            </ElButton>
+        }
+
+        return () => {
+            return <section>
             <div class={[PassageStyle.passagePage, store.getters['main/passage/passageList'].loading ? 'loading' : '']} >
                 <h3>文章列表</h3>
                 <section>
@@ -74,6 +85,7 @@ export default defineComponent({
                         </ElFormItem>
                         <ElFormItem>
                             <ElButton type={'primary'} onclick={search}>搜索</ElButton>
+                            <PassageCreate/>
                         </ElFormItem>
                     </ElForm>
                 </section>
@@ -84,6 +96,6 @@ export default defineComponent({
                     {store.getters['main/passage/passageList'].total === store.getters['main/passage/passageList'].dataList.length ? [] : <ElButton size={'small'} onclick={loadMore}>加载更多...</ElButton>}
                 </section>
             </section>
-        </section >
+        </section >}
     }
 })

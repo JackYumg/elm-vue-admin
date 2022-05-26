@@ -1,0 +1,17 @@
+.tag-select-container{
+    display: flex;
+    .tag-item{
+        margin: 0 6px;
+        &-first{
+            margin:  0 6px 0 0;
+        }
+    }
+}
+
+.tag-list-container{
+    display: flex;
+    margin: 6px 0;
+   .tag-item{
+    flex: 1;
+   } 
+}

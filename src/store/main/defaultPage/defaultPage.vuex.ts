@@ -26,7 +26,7 @@ const initState: DefaultState = {
 
 const actions = {
     getImageList({ commit, state }: { state: DefaultState, commit: any }, payload: any) {
-        axios.get('/apis/images').then((res) => {
+        axios.get('http://localhost:3000/image').then((res) => {
             commit('setImageData', [res]);
         });
     }

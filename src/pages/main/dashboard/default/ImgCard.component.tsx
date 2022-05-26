@@ -6,7 +6,7 @@ import { appkey } from '@store/index';
 export default defineComponent({
     mounted() {
         const store = useStore(appkey);
-        store.dispatch('main/getImageList');
+        // store.dispatch('main/getImageList');
     },
 
     render() {

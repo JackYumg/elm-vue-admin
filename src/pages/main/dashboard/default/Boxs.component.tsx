@@ -1,8 +1,11 @@
-import { ElRow, ElCol, ElIcon } from "element-plus";
+import { ElRow, ElCol } from "element-plus";
 import { defineComponent } from "vue";
 import dashboardStyles from './../dashboard.module.scss';
 import TotalCharts from "./Total.charts";
 export default defineComponent({
+    setup(){
+
+    },
     render() {
         return <ElRow class={dashboardStyles.item} gutter={20}>
             <ElCol span={6} xs={24} sm={12} md={6} class={[dashboardStyles.itemCol]}>

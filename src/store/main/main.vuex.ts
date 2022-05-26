@@ -1,5 +1,7 @@
 import { passageM } from "./passage/passage.vuex";
 import { defaultOption } from './defaultPage/defaultPage.vuex';
+import { tagM } from "./Tag/tag.vuex";
+import { UserInfoModule } from "./user/userinfo.vuex";
 interface MainState {
     menuToggle: boolean;
 }
@@ -20,7 +22,9 @@ export const mainM = {
     mutations,
     modules: {
         passage: passageM,
-        defaultOption
+        tag: tagM,
+        defaultOption,
+        userInfo: UserInfoModule
     }
 }
 

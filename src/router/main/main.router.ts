@@ -14,8 +14,16 @@ export const mainRoutes: RouteRecordRaw[] = [
     {
         path: 'blog', component: () => import('@pages/main/blog/Blog.page'),
         children: [
-            { path: 'price-tag', component: () => import('@pages/main/blog/Blog.page') },
-            { path: 'document' , component: () => import('@pages/main/blog/passage/Passage.page')}
+            { path: 'price-tag', component: () => import('@pages/main/blog/tag/Tag.page') },
+            {
+                path: 'document', component: () => import('@pages/main/blog/passage/Passage.page')
+            }
         ]
+    },
+    {
+        path: 'passage-form', name: 'formadd', component: () => import('@pages/main/blog/passage/passageform/passage-form.page'),
+    },
+    {
+        path: 'passage-form/:id', name: 'formedit',component: () => import('@pages/main/blog/passage/passageform/passage-form.page'),
     }
 ];

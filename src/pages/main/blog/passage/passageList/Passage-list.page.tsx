@@ -1,5 +1,6 @@
 import PassageItem from "@components/passage/PassageItem";
-import { defineComponent, reactive } from "vue";
+import { defineComponent, onMounted, reactive } from "vue";
+import { useStore } from "vuex";
 import PassageListStyle from './passage-list.module.scss';
 export default defineComponent({
     props: {
