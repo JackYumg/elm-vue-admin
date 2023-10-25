@@ -21,8 +21,8 @@ export const passageList = gql`query queryData($pageoption:PassagePationOptionIn
     }
   }`;
 
-export const passageAdd = gql`mutation addPassage($passage: PassageInput){
-  createPassage  (passage: $passage) {
+export const passageAdd = gql`mutation createPassage($passage: PassageInput){
+  createPassage(passage: $passage) {
     name,
     content,
   }

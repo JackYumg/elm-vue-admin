@@ -1,5 +1,5 @@
-import { provideApolloClient, useQuery, useResult } from '@vue/apollo-composable';
-import { getPassageById, passageList } from "@gql/passage.gql";
+import { provideApolloClient, useMutation, useQuery, useResult } from '@vue/apollo-composable';
+import { getPassageById, passageAdd, passageList } from "@gql/passage.gql";
 import { apolloClient } from "./../../../apollo";
 import { watch } from "vue";
 import { ActionContext } from 'vuex';
@@ -39,7 +39,12 @@ const actions = {
         });
     },
     savePassage(context: ActionContext<PasageState, any>, payload: any) {
-
+        const client = provideApolloClient(apolloClient);
+        const { mutate: createPassage } = useMutation(passageAdd , () => ({
+            variables: payload
+        }));
+        const query = client(createPassage);
+        useResult(query)
     },
     getPassageDetail(context: ActionContext<any, any>, payload: number) {
         getPassageInfoById(payload).then(({ data }) => {

@@ -47,7 +47,9 @@ export default defineComponent({
         }
 
         const saveDoc = () => {
-            store.dispatch('');
+            store.dispatch('main/passage/savePassage' , {
+                passage: {...passageItem , name: passageItem.title}
+            } );
         }
 
         const back = () => {
@@ -78,10 +80,14 @@ export default defineComponent({
                     </ElCol>
                 </ElRow>
                 <ElRow>
-                    <ElCol offset={11} span={1} style={{ 'text-alain': 'center' }}>
+                    <ElCol offset={10} span={2} style={{ 'text-alain': 'center' }}>
                         <ElFormItem>
                             <ElButton onClick={saveDoc} type={'primary'}>
                                 保存文档</ElButton>
+                        </ElFormItem>
+                    </ElCol>
+                    <ElCol offset={0} span={2} style={{ 'text-alain': 'center' }}>
+                        <ElFormItem>
                             <ElButton onClick={back}>返回</ElButton>
                         </ElFormItem>
                     </ElCol>

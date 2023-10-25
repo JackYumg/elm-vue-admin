@@ -1,4 +1,4 @@
-import { RouteRecordRaw } from "vue-router";
+import { RouteRecordRaw , createRouter, createWebHashHistory} from "vue-router";
 import { mainRoutes } from "./main/main.router";
 import { passportRoutes } from "./passport";
 export const rootRoutes: RouteRecordRaw[] = [
@@ -12,3 +12,8 @@ export const rootRoutes: RouteRecordRaw[] = [
         ]
     }
 ];
+
+export const router = createRouter({
+    history: createWebHashHistory(),
+    routes: rootRoutes
+});

@@ -1,5 +1,5 @@
 import AlTag from "@components/tag/AlTag";
-import { ElButton, ElIcon } from "element-plus";
+import { ElButton, ElIcon, ElLink } from "element-plus";
 import { reactive } from "vue";
 import { defineComponent } from "vue";
 import PassageItemStyle from './PassageItem.module.scss';
@@ -37,8 +37,17 @@ export default defineComponent({
             </div>;
         }
 
+        const MotifyButton = (data) => {
+            if (data.passage.origin !== 'LOCAL' ) {
+                return <ElLink type={'primary'}>同步</ElLink>
+            } else {
+                return <RouterLink to={{ name: 'formedit', path: '/main/passage-form', params: { id: data.passage.id } }}>修改</RouterLink>;
+            }
+        }
+
         const map: any = {
-            SEGMENTFAULT: 'https://segmentfault.com/'
+            SEGMENTFAULT: 'https://segmentfault.com/',
+            LOCAL: '本站'
         };
 
         return () => <div class={PassageItemStyle.passageItem}>
@@ -75,7 +84,9 @@ export default defineComponent({
                         <span>1290</span>
                     </div>
                     <div class={PassageItemStyle.p1}>
-                        <RouterLink to={{ name: 'formedit' , path: '/main/passage-form' , params: {id: publishDate.passage.id}}}>修改</RouterLink>
+                        {
+                            MotifyButton(publishDate)
+                        }
                     </div>
                     <div class={PassageItemStyle.p1}>删除</div>
                 </div>
