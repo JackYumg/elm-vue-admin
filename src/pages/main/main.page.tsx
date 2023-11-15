@@ -7,7 +7,11 @@ import UserInfo from "../../components/main/UserInfo";
 import { useStore } from "vuex";
 import { appkey } from "../../store";
 import { RouterView } from "vue-router";
+import { usePassageSocket } from "@apis/socket/passage.socket";
 export default defineComponent({
+    mounted(){
+        usePassageSocket().connect();
+    },
     components: {
         Menu
     },
