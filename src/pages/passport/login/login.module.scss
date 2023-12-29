@@ -9,3 +9,16 @@
         text-align: center;
     }
 }
+
+
+.password-container{
+    .auth-code {
+        height: 32px;
+        width: 80px;
+        overflow: hidden;
+        svg{
+            height: inherit;
+            width: inherit;
+        }
+    }
+}

@@ -6,10 +6,10 @@ import { ApolloError } from "apollo-client";
 
 
 // 登录
-export const loginIn = (username: string, password: string): Promise<any> => {
+export const loginIn = (username: string, password: string, smsCode: number,timer: number): Promise<any> => {
     return new Promise((resolve) => {
-        const queryQl = gql`query GET_ACCESS_TOKEN($userInfo: UserInput!){
-            login(userIn: $userInfo){
+        const queryQl = gql`query GET_ACCESS_TOKEN($userInfo: UserInput!, $smsCode: String!, $timer: String!){
+            login(userIn: $userInfo,smsCode: $smsCode,timer: $timer){
               access_token
             }
           }`
@@ -18,8 +18,10 @@ export const loginIn = (username: string, password: string): Promise<any> => {
                 () => useQuery(queryQl, {
                     "userInfo": {
                         "username": username,
-                        "password": password
-                    }
+                        "password": password,
+                    },
+                    "smsCode": smsCode,
+                    "timer": timer.toString()
                 })
             );
 
@@ -49,7 +51,7 @@ export const getUserInfo = () => {
         }
     }`;
 
-    linkReOption.headers.Authorization = `Bearer ${localStorage.getItem('wym_jwt')}` ;
+    linkReOption.headers.Authorization = `Bearer ${localStorage.getItem('wym_jwt')}`;
 
     const query = provideApolloClient(apolloClient)(() => {
         const dd = useQuery(queryQl);

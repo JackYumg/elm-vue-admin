@@ -48,13 +48,13 @@ export default defineComponent({
                 <ElButtonGroup>
                     <ElButton class={[mainStyles.btnLeft, mainStyles.toolBtn]} size={'small'} type={'primary'} icon={'el-icon-bell'}>
                     </ElButton>
-                    <ElButton class={[mainStyles.btnCenter, mainStyles.toolBtn, 'hidden-sm-and-down']} size={'small'} type={'primary'} icon={'el-icon-bell'}>
+                    {/* <ElButton class={[mainStyles.btnCenter, mainStyles.toolBtn, 'hidden-sm-and-down']} size={'small'} type={'primary'} icon={'el-icon-bell'}>
                     </ElButton>
                     <ElButton class={[mainStyles.btnRight, mainStyles.toolBtn, 'hidden-sm-and-down']} size={'small'} type={'primary'} icon={'el-icon-menu'}>
-                    </ElButton>
+                    </ElButton> */}
                     <ElButton class={[mainStyles.btnRight, mainStyles.toolBtn, 'hidden-sm-and-down']} size={'small'} type={'primary'} icon={'el-icon-setting'}>
                     </ElButton>
-                    <ElButton class={[mainStyles.btnRight, mainStyles.toolBtn]} size={'small'} type={'primary'}>
+                    {/* <ElButton class={[mainStyles.btnRight, mainStyles.toolBtn]} size={'small'} type={'primary'}>
                         <ElRow justify={'center'} align={'middle'}>
                             <ElCol span={6}>
                                 <ElAvatar style={{ width: '14px', height: '14px' }} size={'small'} src={'https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png'}></ElAvatar>
@@ -63,7 +63,7 @@ export default defineComponent({
                                 232323
                             </ElCol>
                         </ElRow>
-                    </ElButton>
+                    </ElButton> */}
                 </ElButtonGroup>
             </div>
 
